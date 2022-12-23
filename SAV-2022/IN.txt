@@ -1,0 +1,148 @@
+uint function plus(uint a, uint b){
+	type uint res = a + b;
+
+	return res;
+}
+
+Main {	
+	WriteLine "Test cases";
+	
+	WriteLine " ";
+	WriteLine "---Data types---";
+
+	Write "TEST char: ";
+	type char testChar = 'a';
+	WriteLine testChar;
+	
+	Write "TEST string: ";
+	type string testStr = "string";
+	WriteLine testStr;
+	type string conct = " concat";
+
+	type bool testBool = true;
+	if testBool == true then [WriteLine "Test BOOL: true";]	
+
+	Write "TEST uint: ";
+	type uint testUint = 10;
+	WriteLine testUint;
+
+	WriteLine " ";
+	WriteLine "---Lib functions---";
+
+	Write "TEST date function: ";
+	type string testDate = getDateNow();
+	WriteLine testDate;
+
+	Write "TEST time function: ";	
+	type string testTime = getTimeNow();
+	WriteLine testTime;
+
+	Write "TEST concat function: ";
+	type string testConcat = concat(testStr, conct);
+	WriteLine testConcat;
+	
+	Write "TEST copy function: ";
+	type string testCopy = copy(testConcat);
+	WriteLine testCopy;
+
+	Write "TEST random function: ";
+	type uint testRandom = random(10);
+	WriteLine testRandom;
+
+	Write "TEST pow function: ";
+	type uint testPow = pow(5, 2);
+	WriteLine testPow;
+
+	Write "TEST strLen function: ";
+	type uint testLen = strLen(testStr);
+	WriteLine testLen;
+	
+	Write "TEST intToStr function: ";
+	type string testIntToStr = intToStr(testUint);
+	WriteLine testIntToStr;
+
+	WriteLine "TEST input string function: ";
+	type string testInput = inputString();
+	Write "Result: ";
+	WriteLine testInput;
+
+	WriteLine "TEST input char function: ";
+	type char testInput2 = inputChar();
+	Write "Result: ";
+	WriteLine testInput2;
+	
+	WriteLine " ";
+	WriteLine "---Arithmetic operations---";
+	
+	Write "TEST 5 + 5 = ";
+	type uint testPlus = 5 + 5;
+	WriteLine testPlus;
+	
+	Write "TEST 10 - 3 = ";
+	type uint testMinus = testPlus - 3;
+	WriteLine testMinus;	
+	
+	Write "TEST 10 * 5 = ";
+	type uint testUmn = testPlus * 5;
+	WriteLine testUmn;
+
+	Write "TEST 10 / 5 = ";
+	type uint testDel = testPlus / 5;
+	WriteLine testDel;	
+
+	Write "TEST 10 mod 2 = ";
+	type uint testDel2 = testPlus % 2;
+	WriteLine testDel2;
+	
+	WriteLine " ";
+	WriteLine "---Shift operations---";
+
+	Write "TEST 1 >> 1 = ";
+	type uint testSdvig = 1;
+	testSdvig >> 1;
+	WriteLine testSdvig;
+
+	Write "TEST 1 << 1 = ";
+	type uint testSdvig2 = 1;
+	testSdvig2 << 1;
+	WriteLine testSdvig2;
+
+	WriteLine "---If, Else and logical operations---";
+
+	if 1 == 1 then [
+		WriteLine "1 == 1: True"; 
+	] 
+	else [
+		WriteLine "Test if,==: False"; 
+	]
+
+	if testPlus != 999 then [ WriteLine "10 != 999: True"; ]
+
+	if 10 > 9 then [ WriteLine "10 > 9: True"; ]
+	
+	if 10 < 9 then [] else [ WriteLine "10 < 9: False"; ]
+	
+	if 10 >= 10 then [ WriteLine "10 >= 10: True"; ]
+
+	if 9 <= 10 then [ WriteLine "9 <= 10: True"; ]
+
+	WriteLine " ";
+	WriteLine "---Functions---";
+	
+	testUint = plus(5,10);
+
+	Write "Function result: ";
+	WriteLine testUint;	
+
+	WriteLine " ";
+	WriteLine "---While---";
+
+	type uint i = 0;
+
+	while i < 5 do[
+		i = i + 1;
+
+		Write "Iteration N";
+		WriteLine i;
+	]
+}
